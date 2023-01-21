@@ -54,15 +54,13 @@ form input {
     background-color: transparent;
     color: white;
     font-size: 20px;
+    border-radius: 10px;
 }
 form input[type='password']:focus ~ .l-pas {
     top: calc(60px - 11px);
     background-color: var(--main-color);
 }
-form input:focus ~ .l-us {
-    top: -8px;
-    background-color: var(--main-color);
-}
+
 form input[type="email"]:focus ~ .l-em {
     top: 110px;
     background-color: var(--main-color);
@@ -96,9 +94,19 @@ form label {
     align-items: center;
     margin: 20px 0;
     cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 40px;
 }
 
-
+form input[type='submit']{
+    cursor: pointer;
+    width: 100px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
 @media (min-width: 769px) {
     .container {
         width: 500px;
