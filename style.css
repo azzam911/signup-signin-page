@@ -1,0 +1,107 @@
+:root {
+    --main-color: #4D5656;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    margin: 40px auto;
+    width: 100%;
+    perspective: 1000px;
+}
+.box {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: 1s;
+    transform-origin: right center;
+    color: white;
+}
+.box .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backface-visibility: hidden;
+    background-color: var(--main-color);
+}
+
+.box .back {
+    transform: rotateY(180deg);
+}
+
+form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+form input {
+    padding: 10px;
+    outline: none;
+    border: 2px white solid;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+}
+form input[type='password']:focus ~ .l-pas {
+    top: calc(60px - 11px);
+    background-color: var(--main-color);
+}
+form input:focus ~ .l-us {
+    top: -8px;
+    background-color: var(--main-color);
+}
+form input[type="email"]:focus ~ .l-em {
+    top: 110px;
+    background-color: var(--main-color);
+}
+form label {
+    position: absolute;
+    padding: 5px;
+    left: 10px;
+}
+form .l-us {
+    top: 7px;
+}
+form .l-pas {
+    top: 70px;
+}
+form .l-em {
+    top: 130px;
+}
+
+form label {
+    transition: 0.5s;
+    color: white;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+
+@media (min-width: 769px) {
+    .container {
+        width: 500px;
+        perspective: 1000px;
+    }
+}
